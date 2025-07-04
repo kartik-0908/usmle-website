@@ -54,7 +54,7 @@ const Navbar = () => {
           }}
           aria-label="Makai RCM"
         >
-          <span className="text-xl font-bold tracking-tight text-gray-900">Makai RCM</span>
+          <span className="text-xl font-bold tracking-tight text-gray-900">MAKAI RCM</span>
         </a>
 
         {/* Desktop Navigation */}
