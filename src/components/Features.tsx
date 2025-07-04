@@ -164,10 +164,6 @@ const Features = () => {
               <div className="text-3xl font-bold text-purple-600 mb-2">70%</div>
               <div className="text-sm text-gray-700">Faster Billing Cycles</div>
             </div>
-            <div className="text-center p-4 bg-gradient-to-br from-red-50 to-red-100 rounded-xl">
-              <div className="text-3xl font-bold text-red-600 mb-2">99.2%</div>
-              <div className="text-sm text-gray-700">Accuracy on USMLE</div>
-            </div>
             <div className="text-center p-4 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl">
               <div className="text-3xl font-bold text-orange-600 mb-2">$100-200K+</div>
               <div className="text-sm text-gray-700">Annual Revenue Increase / provider</div>
