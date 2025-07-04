@@ -151,7 +151,7 @@ const Features = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-xl">
               <div className="text-3xl font-bold text-green-600 mb-2">95%+</div>
               <div className="text-sm text-gray-700">First-Pass Approval Rate</div>
