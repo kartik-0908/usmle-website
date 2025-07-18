@@ -155,10 +155,10 @@ const Hero = () => {
                 <MessageCircle className="w-4 h-4 text-blue-500" />
                 <span className="text-gray-700 text-sm font-medium">Voice Tutoring</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-2 shadow-sm">
+              {/* <div className="flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-2 shadow-sm">
                 <Brain className="w-4 h-4 text-purple-500" />
                 <span className="text-gray-700 text-sm font-medium">Deep Learning</span>
-              </div>
+              </div> */}
               <div className="flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-2 shadow-sm">
                 <Sparkles className="w-4 h-4 text-pulse-500" />
                 <span className="text-gray-700 text-sm font-medium">24/7 Available</span>
