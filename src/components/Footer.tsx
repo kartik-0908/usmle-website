@@ -10,7 +10,7 @@ const Footer = () => {
             San Francisco 94108, US
           </p>
           <p>
-            © 2025 Makai RCM. All rights reserved.
+            © 2025 Step Genie. All rights reserved.
           </p>
         </div>
       </div>

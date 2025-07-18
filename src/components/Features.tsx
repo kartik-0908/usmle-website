@@ -309,7 +309,7 @@ const Features = () => {
             </h3>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="text-center">
               <div className="w-12 h-12 bg-white bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -320,7 +320,7 @@ const Features = () => {
               <h4 className="font-semibold mb-2">Judgment-Free Learning</h4>
               <p className="text-sm text-gray-300">Safe space to make mistakes and learn without fear of judgment or embarrassment</p>
             </div>
-            <div className="text-center">
+            {/* <div className="text-center">
               <div className="w-12 h-12 bg-white bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
                   <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -331,7 +331,7 @@ const Features = () => {
               </div>
               <h4 className="font-semibold mb-2">QBank Integration</h4>
               <p className="text-sm text-gray-300">Works with UWorld, Kaplan, Amboss, and other popular question banks</p>
-            </div>
+            </div> */}
             <div className="text-center">
               <div className="w-12 h-12 bg-white bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
@@ -386,7 +386,7 @@ const Features = () => {
           </form>
           
           <p className="text-gray-500 text-sm mt-4">
-            We'll notify you when Step Genie is ready. No spam, ever.
+            We'll notify you when Step Genie is live. No spam, ever.
           </p>
         </div>
       </div>
