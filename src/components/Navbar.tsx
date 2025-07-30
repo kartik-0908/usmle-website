@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,6 +38,13 @@ const Navbar = () => {
     }
   };
 
+  const handleSignIn = () => {
+    window.open("https://dashboard.stepgenie.app/sign-in", "_blank");
+    if (isMenuOpen) {
+      closeMenu();
+    }
+  };
+
   return (
     <>
       <header
@@ -62,24 +69,38 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <a
-              href="#"
-              className="nav-link"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToTop();
+          <div className="hidden md:flex items-center space-x-8">
+            <nav className="flex space-x-8">
+              <a
+                href="#"
+                className="nav-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToTop();
+                }}
+              >
+                Home
+              </a>
+              <a href="#features" className="nav-link">
+                How It Works
+              </a>
+            </nav>
+
+            {/* Desktop Sign In Button */}
+            <button
+              onClick={handleSignIn}
+              className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:from-blue-700 hover:to-green-700"
+              style={{
+                border: "1px solid rgba(255, 255, 255, 0.2)",
               }}
             >
-              Home
-            </a>
-            <a href="#features" className="nav-link">
-              How It Works
-            </a>
-            {/* <a href="#pricing" className="nav-link">
-              Pricing
-            </a> */}
-          </nav>
+              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <div className="relative flex items-center justify-center">
+                Sign In
+                <ArrowRight className="ml-1.5 w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+              </div>
+            </button>
+          </div>
 
           {/* Mobile menu button - increased touch target */}
           <button
@@ -101,8 +122,8 @@ const Navbar = () => {
             : "opacity-0 translate-x-full pointer-events-none"
         )}
       >
-        {/* Header area in mobile menu - just logo, no close button */}
-        <div className="flex items-center px-4 sm:px-6 py-4 border-b">
+        {/* Header area in mobile menu */}
+        <div className="flex items-center px-4 sm:px-6 py-4 border-b border-gray-200">
           <a
             href="#"
             className="flex items-center space-x-2"
@@ -122,7 +143,7 @@ const Navbar = () => {
         <nav className="flex flex-col space-y-2 px-4 sm:px-6 py-8">
           <a
             href="#"
-            className="text-xl font-medium py-4 px-4 w-full text-left rounded-lg hover:bg-gray-100 transition-colors"
+            className="text-xl font-medium py-4 px-4 w-full text-left rounded-lg hover:bg-gray-100 transition-colors text-gray-900"
             onClick={(e) => {
               e.preventDefault();
               scrollToTop();
@@ -133,27 +154,27 @@ const Navbar = () => {
           </a>
           <a
             href="#features"
-            className="text-xl font-medium py-4 px-4 w-full text-left rounded-lg hover:bg-gray-100 transition-colors"
+            className="text-xl font-medium py-4 px-4 w-full text-left rounded-lg hover:bg-gray-100 transition-colors text-gray-900"
             onClick={closeMenu}
           >
             How It Works
           </a>
-          {/* <a
-            href="#pricing"
-            className="text-xl font-medium py-4 px-4 w-full text-left rounded-lg hover:bg-gray-100 transition-colors"
-            onClick={closeMenu}
-          >
-            Pricing
-          </a> */}
         </nav>
 
-        {/* CTA button in mobile menu */}
+        {/* Sign In button in mobile menu */}
         <div className="px-4 sm:px-6 py-4 mt-auto">
           <button 
-            className="w-full bg-gradient-to-r from-pulse-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
-            onClick={closeMenu}
+            onClick={handleSignIn}
+            className="group relative overflow-hidden w-full bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:from-blue-700 hover:to-green-700"
+            style={{
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+            }}
           >
-            Join the Waitlist
+            <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            <div className="relative flex items-center justify-center">
+              Sign In to Dashboard
+              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </div>
           </button>
         </div>
       </div>
