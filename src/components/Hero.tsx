@@ -90,7 +90,7 @@ const Hero = () => {
 
   return (
     <section
-      className="overflow-hidden relative min-h-screen flex items-center bg-cover pt-20 sm:pt-24"
+      className="overflow-hidden relative min-h-screen flex items-center justify-center bg-cover pt-20 sm:pt-24"
       id="hero"
       style={{
         backgroundImage: 'url("/Header-background.webp")',
@@ -108,12 +108,12 @@ const Hero = () => {
       </div>
 
       <div
-        className="container px-4 sm:px-6 lg:px-8 relative z-10"
+        className="container max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10"
         ref={containerRef}
       >
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div className="w-full lg:w-1/2 text-center lg:text-left">
+        <div className="flex flex-col items-center text-center space-y-2">
+          {/* Content Section */}
+          <div className="w-full max-w-4xl">
             {/* AI Badge */}
             <div
               className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md border border-blue-200 rounded-full px-4 py-2 mb-6 opacity-0 animate-fade-in shadow-sm"
@@ -126,26 +126,26 @@ const Hero = () => {
             </div>
 
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-6xl font-bold leading-tight text-gray-900 mb-6 opacity-0 animate-fade-in"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900 mb-6 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.3s" }}
             >
-              🩺 Step Genie: {" "}
+              It's like{" "}
               <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
                 UWORLD
               </span>{" "}
               with actual intelligence
             </h1>
 
-            <p
+            {/* <p
               style={{ animationDelay: "0.4s" }}
-              className="text-xl sm:text-2xl leading-relaxed opacity-0 animate-fade-in text-gray-700 font-medium mb-8"
+              className="text-xl sm:text-2xl lg:text-3xl leading-relaxed opacity-0 animate-fade-in text-gray-700 font-medium mb-8"
             >
-             Skimming MCQs won’t cut it. If you want bullet‑proof clinical intuition, you’ve got to rip medicine down to the cellular level and rebuild it.
-            </p>
+             Clinical instinct isn't guessed. It's built from the ground up.
+            </p> */}
 
             {/* Feature Pills */}
-            <div
-              className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8 opacity-0 animate-fade-in"
+            {/* <div
+              className="flex flex-wrap justify-center gap-3 mb-8 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.5s" }}
             >
               <div className="flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-blue-200 rounded-full px-4 py-2 shadow-sm">
@@ -160,11 +160,11 @@ const Hero = () => {
                   Step 1 & 2 Ready
                 </span>
               </div>
-            </div>
+            </div> */}
 
             {/* CTA Button */}
             <div
-              className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in"
+              className="flex justify-center opacity-0 animate-fade-in mb-12"
               style={{ animationDelay: "0.7s" }}
             >
               <button
@@ -176,16 +176,15 @@ const Hero = () => {
               >
                 <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 <div className="relative flex items-center justify-center">
-                  Sign Up
+                  Let's Start
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </div>
               </button>
             </div>
           </div>
 
-          {/* Right Content */}
-          <div className="w-full lg:w-1/2 relative mt-8 lg:mt-0">
-            {/* Main Visual */}
+          {/* Video Section - Larger and Centered */}
+          <div className="w-full max-w-5xl relative">
             <div className="relative">
               {lottieData ? (
                 <div
@@ -195,7 +194,7 @@ const Hero = () => {
                   <div className="bg-white/80 backdrop-blur-xl border border-gray-200 rounded-3xl p-8 shadow-2xl">
                     <LottieAnimation
                       animationPath={lottieData}
-                      className="w-full h-auto max-w-lg mx-auto"
+                      className="w-full h-auto"
                       loop={true}
                       autoplay={true}
                     />
@@ -203,14 +202,17 @@ const Hero = () => {
                 </div>
               ) : (
                 <div
-                  className="relative transition-all duration-500 ease-out rounded-3xl overflow-hidden backdrop-blur-xl border border-gray-200 p-0 shadow-2xl animate-fade-in"
+                  className="relative transition-all duration-500 ease-out rounded-3xl overflow-hidden backdrop-blur-xl border border-gray-200 shadow-2xl animate-fade-in"
                   style={{ animationDelay: "0.9s" }}
                 >
                   <video
                     ref={videoRef}
                     src="/demo.mp4"
                     className="w-full h-auto object-cover transition-transform duration-500 ease-out rounded-2xl"
-                    style={{ transformStyle: "preserve-3d" }}
+                    style={{ 
+                      transformStyle: "preserve-3d",
+                      minHeight: "400px"
+                    }}
                     autoPlay
                     loop
                     muted
@@ -269,5 +271,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-
