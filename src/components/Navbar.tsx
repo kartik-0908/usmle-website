@@ -63,9 +63,11 @@ const Navbar = () => {
             }}
             aria-label="Step Genie"
           >
-            <span className="text-xl font-bold tracking-tight text-gray-900">
-              STEP GENIE
-            </span>
+            <img 
+              src="/logo-new.png" 
+              alt="Step Genie" 
+              className="h-8 w-auto sm:h-10 md:h-16 transition-all duration-300"
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -123,7 +125,7 @@ const Navbar = () => {
         )}
       >
         {/* Header area in mobile menu */}
-        <div className="flex items-center px-4 sm:px-6 py-4 border-b border-gray-200">
+        {/* <div className="flex items-center px-4 sm:px-6 py-4 border-b border-gray-200">
           <a
             href="#"
             className="flex items-center space-x-2"
@@ -133,14 +135,16 @@ const Navbar = () => {
             }}
             aria-label="Step Genie"
           >
-            <span className="text-xl font-bold tracking-tight text-white">
-              STEP GENIE
-            </span>
+            <img 
+              src="/logo-new.png" 
+              alt="Step Genie" 
+              className="h-8 w-auto transition-all duration-300"
+            />
           </a>
-        </div>
+        </div> */}
 
         {/* Navigation links */}
-        <nav className="flex flex-col space-y-2 px-4 sm:px-6 py-8">
+        <nav className="flex flex-col space-y-2 px-4 sm:px-6 py-16">
           <a
             href="#"
             className="text-xl font-medium py-4 px-4 w-full text-left rounded-lg hover:bg-gray-100 transition-colors text-gray-900"
