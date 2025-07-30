@@ -245,33 +245,12 @@ const Features = () => {
           />
         </div>
 
-        {/* How It Works Visual Demo */}
-        <div className="mb-20">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              See Step Genie in Action
-            </h3>
-            <p className="text-gray-700 text-xl font-medium">
-              Watch how our AI tutor guides you through complex medical questions step-by-step
-            </p>
-          </div>
-          
-          {/* Clinical Question Demo */}
-          <div className="bg-white/80 backdrop-blur-xl border border-gray-200 rounded-3xl p-8 shadow-2xl">
-            <img 
-              src="/action.png" 
-              alt="Step Genie AI tutor demonstrating step-by-step guidance through a clinical question about acid-base disorders"
-              className="w-full h-auto rounded-2xl shadow-lg"
-            />
-          </div>
-        </div>
-
         {/* Key Benefits Visual */}
         <div className="mb-20">
           <div className="bg-white/80 backdrop-blur-xl border border-gray-200 rounded-3xl p-8 shadow-2xl">
             <div className="text-center mb-8">
               <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Why Medical Students Choose Step Genie
+                Why Choose Us ?
               </h3>
               <p className="text-gray-700 text-xl font-medium">
                 Five core benefits that transform your USMLE preparation
