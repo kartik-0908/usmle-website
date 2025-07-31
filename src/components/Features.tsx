@@ -257,7 +257,7 @@ const Features = () => {
               </p>
             </div>
             
-            <div className="">
+            <div className="max-w-4xl max-h-4xl mx-auto">
               <img 
                 src="/benifits.png" 
                 alt="Five key benefits of Step Genie: Conceptual learning, Voice guidance, Save time, Fast prep, and Medical accuracy"
