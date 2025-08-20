@@ -5,21 +5,17 @@ import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 
 const COOKIE_MAX_AGE_DAYS = 90;
-const COOKIE_EXPIRES = new Date(
-  Date.now() + COOKIE_MAX_AGE_DAYS * 24 * 60 * 60 * 1000
-).toUTCString();
+const COOKIE_EXPIRES = new Date(Date.now() + COOKIE_MAX_AGE_DAYS * 24 * 60 * 60 * 1000).toUTCString();
 
 function setApexCookie(name: string, value: string) {
-  document.cookie = `sg_${name}=${encodeURIComponent(
-    value
-  )}; Path=/; Domain=.stepgenie.app; Expires=${COOKIE_EXPIRES}; SameSite=Lax; Secure`;
+  // NOTE: client JS cannot set HttpOnly; this is a readable cookie.
+  document.cookie = `${name}=${encodeURIComponent(value)}; Path=/; Domain=.stepgenie.app; Expires=${COOKIE_EXPIRES}; SameSite=Lax; Secure`;
 }
 
 const Index = () => {
   // 0) Capture referral/UTMs and set cookies for the apex domain
   useEffect(() => {
     const url = new URL(window.location.href);
-
     const ref = url.searchParams.get("ref");
     if (ref) setApexCookie("ref", ref);
 
@@ -59,14 +55,10 @@ const Index = () => {
       const targetElement = document.getElementById(targetId);
       if (!targetElement) return;
       const offset = window.innerWidth < 768 ? 100 : 80;
-      window.scrollTo({
-        top: targetElement.offsetTop - offset,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: targetElement.offsetTop - offset, behavior: "smooth" });
     };
     anchors.forEach((a) => a.addEventListener("click", onClick));
-    return () =>
-      anchors.forEach((a) => a.removeEventListener("click", onClick));
+    return () => anchors.forEach((a) => a.removeEventListener("click", onClick));
   }, []);
 
   return (
