@@ -1,19 +1,36 @@
-
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import HumanoidSection from "@/components/HumanoidSection";
-import SpecsSection from "@/components/SpecsSection";
-import DetailsSection from "@/components/DetailsSection";
-import ImageShowcaseSection from "@/components/ImageShowcaseSection";
 import Features from "@/components/Features";
-import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
-import MadeByHumans from "@/components/MadeByHumans";
 import Footer from "@/components/Footer";
 
+const COOKIE_MAX_AGE_DAYS = 90;
+const COOKIE_EXPIRES = new Date(
+  Date.now() + COOKIE_MAX_AGE_DAYS * 24 * 60 * 60 * 1000
+).toUTCString();
+
+function setApexCookie(name: string, value: string) {
+  document.cookie = `sg_${name}=${encodeURIComponent(
+    value
+  )}; Path=/; Domain=.stepgenie.app; Expires=${COOKIE_EXPIRES}; SameSite=Lax; Secure`;
+}
+
 const Index = () => {
-  // Initialize intersection observer to detect when elements enter viewport
+  // 0) Capture referral/UTMs and set cookies for the apex domain
+  useEffect(() => {
+    const url = new URL(window.location.href);
+
+    const ref = url.searchParams.get("ref");
+    if (ref) setApexCookie("ref", ref);
+
+    const utmKeys = ["source", "medium", "campaign", "term", "content"];
+    utmKeys.forEach((k) => {
+      const v = url.searchParams.get(`utm_${k}`);
+      if (v) setApexCookie(`utm_${k}`, v);
+    });
+  }, []);
+
+  // 1) Intersection observer (yours)
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -26,51 +43,38 @@ const Index = () => {
       },
       { threshold: 0.1 }
     );
-    
+
     const elements = document.querySelectorAll(".animate-on-scroll");
     elements.forEach((el) => observer.observe(el));
-    
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
+    return () => elements.forEach((el) => observer.unobserve(el));
   }, []);
 
+  // 2) Smooth scroll (yours)
   useEffect(() => {
-    // This helps ensure smooth scrolling for the anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href')?.substring(1);
-        if (!targetId) return;
-        
-        const targetElement = document.getElementById(targetId);
-        if (!targetElement) return;
-        
-        // Increased offset to account for mobile nav
-        const offset = window.innerWidth < 768 ? 100 : 80;
-        
-        window.scrollTo({
-          top: targetElement.offsetTop - offset,
-          behavior: 'smooth'
-        });
+    const anchors = Array.from(document.querySelectorAll('a[href^="#"]'));
+    const onClick = function (this: HTMLAnchorElement, e: Event) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href")?.substring(1);
+      if (!targetId) return;
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) return;
+      const offset = window.innerWidth < 768 ? 100 : 80;
+      window.scrollTo({
+        top: targetElement.offsetTop - offset,
+        behavior: "smooth",
       });
-    });
+    };
+    anchors.forEach((a) => a.addEventListener("click", onClick));
+    return () =>
+      anchors.forEach((a) => a.removeEventListener("click", onClick));
   }, []);
 
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
+      <main className="space-y-4 sm:space-y-8">
         <Hero />
-        {/* <HumanoidSection /> */}
-        {/* <SpecsSection /> */}
-        {/* <DetailsSection /> */}
-        {/* <ImageShowcaseSection /> */}
         <Features />
-        {/* <Testimonials /> */}
-        {/* <Newsletter /> */}
-        {/* <MadeByHumans /> */}
       </main>
       <Footer />
     </div>
