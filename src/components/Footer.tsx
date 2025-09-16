@@ -12,6 +12,14 @@ const Footer = () => {
           <p>
             © 2025 Step Genie. All rights reserved.
           </p>
+          <div className="pt-2">
+            <a
+              href="/privacy"
+              className="text-blue-600 hover:text-blue-800 underline text-sm"
+            >
+              Privacy Policy
+            </a>
+          </div>
         </div>
       </div>
     </footer>
