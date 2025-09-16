@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { Analytics } from "@vercel/analytics/react";
-import PrivacyPolicyPage from "./components/privacy";
+import PrivacyPolicyPage from "./pages/privacy";
 
 const queryClient = new QueryClient();
 
