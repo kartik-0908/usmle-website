@@ -6,8 +6,8 @@ const Footer = () => {
       <div className="section-container">
         <div className="text-center text-gray-600 text-sm space-y-2">
           <p>
-            650, California Street - Level 7<br />
-            San Francisco 94108, US
+            1412, Market Street<br />
+            San Francisco 94103, US
           </p>
           <p>
             © 2025 Step Genie. All rights reserved.
