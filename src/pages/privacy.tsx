@@ -215,7 +215,7 @@ const PrivacyPolicyPage = () => {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">17) Contact Us</h2>
               <div className="bg-gray-50 p-4 rounded-lg">
-                <p><strong>General privacy requests:</strong> manav@stepgenie.com</p>
+                <p><strong>General privacy requests:</strong> manav@stepgenie.ai</p>
               </div>
             </section>
           </div>
