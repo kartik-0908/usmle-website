@@ -7,9 +7,9 @@ const PrivacyPolicyPage = () => {
             <h1 className="text-3xl font-bold text-gray-900 mb-2">StepGenie Privacy Policy</h1>
             <div className="text-gray-600 space-y-1">
               <p><strong>Effective date:</strong> August 15, 2025</p>
-              <p><strong>Entity:</strong> MAKAI LABS CORP, doing business as StepGenie</p>
+              <p><strong>Entity:</strong> MAKAI HEALTH CORP, doing business as StepGenie</p>
               <p><strong>Registered address:</strong> 1412, Market Street, San Francisco - 94102</p>
-              <p><strong>Contact:</strong> manav@stepgenie.com</p>
+              <p><strong>Contact:</strong> manav@stepgenie.ai</p>
             </div>
           </header>
           
